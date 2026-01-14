@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswini Behera | Professional Profile & Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Chart Containers - Responsive & Constrained */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        /* Timeline Connector */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+
+        /* Print / ATS View Styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                margin: 0;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            /* Force exact ATS formatting on print */
+            #ats-view {
+                display: block !important;
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            #interactive-view {
+                display: none !important;
+            }
+
+            /* Ensure text is black for ATS parsing */
+            * {
+                color: black !important;
+            }
+
+            .border-b-2 {
+                border-bottom: 1px solid black !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation / Mode Switcher -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="font-bold text-xl text-slate-800">Aswini Behera</div>
+                <div class="flex space-x-2 md:space-x-4 items-center">
+                    <button onclick="switchMode('interactive')" id="btn-interactive"
+                        class="px-3 md:px-4 py-2 rounded-md text-xs md:text-sm font-medium transition-colors bg-blue-600 text-white shadow-sm">Interactive
+                        Profile</button>
+                    <button onclick="switchMode('ats')" id="btn-ats"
+                        class="px-3 md:px-4 py-2 rounded-md text-xs md:text-sm font-medium transition-colors text-slate-600 hover:bg-slate-100">ATS
+                        Resume View</button>
+                    <button onclick="window.print()"
+                        class="p-2 text-slate-500 hover:text-blue-600 border border-transparent hover:border-slate-200 rounded-md transition-all"
+                        title="Print to PDF">
+                        <!-- Unicode Printer Icon -->
+                        <span class="text-xl">&#128424;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ========================================= -->
+        <!-- VIEW 1: INTERACTIVE WEB APPLICATION       -->
+        <!-- ========================================= -->
+        <div id="interactive-view" class="space-y-8 transition-opacity duration-300">
+
+            <!-- Hero / Intro Section -->
+            <header
+                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-center lg:items-start relative overflow-hidden">
+                <!-- Decorative background element -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-32 -mt-32 opacity-50 z-0">
+                </div>
+
+                <div class="flex-1 space-y-4 z-10 relative">
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span
+                                class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold tracking-wide uppercase">MBA
+                                Graduate</span>
+                            <span
+                                class="inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-semibold tracking-wide uppercase">Sales
+                                & Marketing</span>
+                            <span
+                                class="inline-block px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-semibold tracking-wide uppercase">Finance</span>
+                        </div>
+                        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">Aswini Behera
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                            Passionate professional combining <span class="font-semibold text-slate-800">Financial
+                                Acumen</span> with <span class="font-semibold text-slate-800">Modern Marketing
+                                Strategies</span>.
+                            Expert in data-driven decision making, strategic planning, and leveraging emerging tech like
+                            AI to drive business growth.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 text-sm text-slate-500 pt-2">
+                        <div class="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                            <span class="bg-slate-100 p-1.5 rounded-full text-slate-600">&#9993;</span>
+                            aswinibehera666@outlook.com
+                        </div>
+                        <div class="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                            <span class="bg-slate-100 p-1.5 rounded-full text-slate-600">&#128222;</span> +91
+                            86589-92725
+                        </div>
+                        <div class="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                            <span class="bg-slate-100 p-1.5 rounded-full text-slate-600">&#127968;</span> Balangir,
+                            Odisha, India
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <a href="https://www.linkedin.com/in/aswini-behera-4a1572225" target="_blank"
+                            class="px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-sm text-sm font-medium flex items-center gap-2">
+                            <span>LinkedIn Profile</span> &#8599;
+                        </a>
+                        <a href="https://github.com/Ab-aswini" target="_blank"
+                            class="px-5 py-2.5 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition shadow-sm text-sm font-medium flex items-center gap-2">
+                            <span>GitHub</span> &#8599;
+                        </a>
+                        <a href="https://splendorous-tapioca-86f42f.netlify.app/" target="_blank"
+                            class="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg hover:bg-slate-50 transition shadow-sm text-sm font-medium flex items-center gap-2">
+                            <span>Web Portfolio</span> &#8599;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Cards -->
+                <div class="w-full lg:w-1/3 flex flex-col gap-4 z-10">
+                    <div
+                        class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <p class="text-xs text-slate-400 font-bold uppercase">Education</p>
+                            <p class="text-lg font-bold text-slate-800">MBA & B.Com</p>
+                        </div>
+                        <span class="text-2xl text-blue-100">&#127891;</span>
+                    </div>
+                    <div
+                        class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <p class="text-xs text-slate-400 font-bold uppercase">Certifications</p>
+                            <p class="text-lg font-bold text-slate-800">6+ Completed</p>
+                        </div>
+                        <span class="text-2xl text-green-100">&#128220;</span>
+                    </div>
+                    <div
+                        class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <p class="text-xs text-slate-400 font-bold uppercase">Top Skill</p>
+                            <p class="text-lg font-bold text-slate-800">Sales & Finance</p>
+                        </div>
+                        <span class="text-2xl text-amber-100">&#128200;</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <!-- LEFT COLUMN: Charts & Analytics (4 Cols) -->
+                <div class="lg:col-span-4 space-y-8">
+
+                    <!-- Skill Radar -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                        <div class="mb-4">
+                            <h2 class="text-lg font-bold text-slate-800">Skill Competency Map</h2>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Visualizing the balance between technical tools and management soft skills.
+                            </p>
+                        </div>
+                        <div class="chart-container" style="height: 280px;">
+                            <canvas id="skillsRadar"></canvas>
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                            <span
+                                class="text-[10px] bg-slate-50 text-slate-500 px-2 py-1 rounded border border-slate-100">Tally</span>
+                            <span
+                                class="text-[10px] bg-slate-50 text-slate-500 px-2 py-1 rounded border border-slate-100">MS
+                                Office</span>
+                            <span
+                                class="text-[10px] bg-slate-50 text-slate-500 px-2 py-1 rounded border border-slate-100">AI
+                                Tools</span>
+                        </div>
+                    </div>
+
+                    <!-- Domain Distribution -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                        <div class="mb-4">
+                            <h2 class="text-lg font-bold text-slate-800">Experience Focus</h2>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Distribution of professional roles and internships.
+                            </p>
+                        </div>
+                        <div class="chart-container" style="height: 220px;">
+                            <canvas id="domainChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Certifications List (Compact) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4">Certifications</h2>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 text-xs font-bold shrink-0">
+                                    G</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-slate-800">Project Management</h4>
+                                    <p class="text-xs text-slate-500">Google</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-xs font-bold shrink-0">
+                                    F</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-slate-800">Sales Analysis</h4>
+                                    <p class="text-xs text-slate-500">Forage</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 text-xs font-bold shrink-0">
+                                    P</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-slate-800">Digital Marketing</h4>
+                                    <p class="text-xs text-slate-500">Placify</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 text-xs font-bold shrink-0">
+                                    I</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-slate-800">IoT Application</h4>
+                                    <p class="text-xs text-slate-500">Infosys Springboard</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: Timeline & Projects (8 Cols) -->
+                <div class="lg:col-span-8 space-y-8">
+
+                    <!-- Timeline Section -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-800">Career & Education Timeline</h2>
+                                <p class="text-sm text-slate-500">A chronological view of my journey.</p>
+                            </div>
+                            <div class="flex bg-slate-100 rounded-lg p-1 shrink-0">
+                                <button onclick="filterTimeline('all')"
+                                    class="filter-btn active px-3 py-1.5 rounded-md text-xs font-medium transition-all bg-white shadow-sm text-slate-800"
+                                    data-filter="all">All</button>
+                                <button onclick="filterTimeline('work')"
+                                    class="filter-btn px-3 py-1.5 rounded-md text-xs font-medium transition-all text-slate-500 hover:text-slate-800"
+                                    data-filter="work">Experience</button>
+                                <button onclick="filterTimeline('education')"
+                                    class="filter-btn px-3 py-1.5 rounded-md text-xs font-medium transition-all text-slate-500 hover:text-slate-800"
+                                    data-filter="education">Education</button>
+                            </div>
+                        </div>
+
+                        <div class="relative timeline-line space-y-8 pl-8 md:pl-10" id="timeline-container">
+                            <!-- Items injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Featured Project Card -->
+                    <div
+                        class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl shadow-md p-6 md:p-8 text-white relative overflow-hidden">
+                        <!-- Decorative circle -->
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full"></div>
+
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs font-bold border border-blue-500/30">FEATURED
+                                        PROJECT</span>
+                                    <h2 class="text-xl md:text-2xl font-bold mt-2">Mini Security Tool Portfolio</h2>
+                                    <p class="text-slate-400 text-sm mt-2 max-w-lg">
+                                        A personal technical project demonstrating understanding of cybersecurity
+                                        concepts and portfolio development structure. Showcases ability to learn
+                                        technical tools beyond the standard MBA curriculum.
+                                    </p>
+                                </div>
+                                <div class="hidden md:block text-4xl opacity-50">&#128187;</div>
+                            </div>
+
+                            <div class="mt-6 flex gap-3">
+                                <a href="https://github.com/Ab-aswini" target="_blank"
+                                    class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-semibold hover:bg-slate-100 transition shadow-sm">
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="text-center text-slate-400 text-sm py-8">
+                <p>&copy; 2026 Aswini Behera. Interactive Portfolio.</p>
+            </footer>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- VIEW 2: ATS FRIENDLY RESUME (TEXT ONLY)   -->
+        <!-- ========================================= -->
+        <div id="ats-view"
+            class="hidden bg-white p-12 max-w-[210mm] mx-auto shadow-2xl print:shadow-none print:p-0 print:max-w-none text-black">
+
+            <!-- ATS Header -->
+            <div class="border-b-2 border-black pb-4 mb-6 text-center">
+                <h1 class="text-3xl font-bold uppercase tracking-wider mb-2">Aswini Behera</h1>
+                <div class="text-sm font-medium flex flex-wrap justify-center gap-4 text-gray-900">
+                    <span>Balangir, Odisha, India</span>
+                    <span>|</span>
+                    <span>+91 86589-92725</span>
+                    <span>|</span>
+                    <span>aswinibehera666@outlook.com</span>
+                </div>
+                <div class="text-sm mt-2 flex justify-center gap-4 text-gray-900 font-medium">
+                    <a href="https://www.linkedin.com/in/aswini-behera-4a1572225" class="hover:underline">LinkedIn:
+                        /aswini-behera</a>
+                    <span>|</span>
+                    <a href="https://github.com/Ab-aswini" class="hover:underline">GitHub: /Ab-aswini</a>
+                </div>
+            </div>
+
+            <!-- Professional Summary -->
+            <div class="mb-6">
+                <h2 class="text-md font-bold uppercase border-b border-black mb-2 tracking-wide">Professional Summary
+                </h2>
+                <p class="text-sm leading-relaxed text-gray-900 text-justify">
+                    Results-oriented MBA graduate with proven expertise in sales strategy, financial analysis, and
+                    customer relationship management. Demonstrated ability to increase booking conversions by 15% and
+                    support large-scale financial operations in corporate environments. Skilled in leveraging data
+                    storytelling and emerging technologies (AI) to drive business growth. Seeking a challenging role to
+                    utilize strategic planning and negotiation skills.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="mb-6">
+                <h2 class="text-md font-bold uppercase border-b border-black mb-3 tracking-wide">Professional Experience
+                </h2>
+
+                <div class="mb-4">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-sm text-gray-900">Mahindra & Mahindra Finance | EV Segment</h3>
+                        <span class="text-sm font-medium">Feb 2025 - Jun 2025</span>
+                    </div>
+                    <p class="text-sm font-semibold italic mb-1">Customer Service Executive</p>
+                    <ul class="list-disc list-outside ml-5 text-sm text-gray-900 space-y-1">
+                        <li>Facilitated financing solutions for new EV models (BE.06 & XUV e9), directly engaging with
+                            prospective buyers.</li>
+                        <li>Served as a strategic liaison between the dealership and customers to resolve queries,
+                            resulting in improved loan conversion rates.</li>
+                        <li>Collected and analyzed customer feedback to support the company's market research and
+                            product positioning strategies.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-sm text-gray-900">Blue Lagoon Residency Pvt. Ltd.</h3>
+                        <span class="text-sm font-medium">May 2023 - Jun 2023</span>
+                    </div>
+                    <p class="text-sm font-semibold italic mb-1">Sales and Marketing Manager</p>
+                    <ul class="list-disc list-outside ml-5 text-sm text-gray-900 space-y-1">
+                        <li>Designed and executed local marketing strategies including referral programs and event-based
+                            promotions.</li>
+                        <li>Managed the sales team to improve lead follow-up processes, successfully boosting monthly
+                            booking conversions by 15%.</li>
+                        <li>Enhanced client engagement through targeted customer acquisition campaigns.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-sm text-gray-900">MCL - Mahanadi Coalfields Limited</h3>
+                        <span class="text-sm font-medium">Jun 2023 - July 2023</span>
+                    </div>
+                    <p class="text-sm font-semibold italic mb-1">Finance Intern (General Manager's Office)</p>
+                    <ul class="list-disc list-outside ml-5 text-sm text-gray-900 space-y-1">
+                        <li>Assisted senior finance officers in reviewing budget utilization and compliance reports.
+                        </li>
+                        <li>Conducted financial analysis to support the preparation of critical management reports.</li>
+                        <li>Gained practical exposure to corporate finance operations and organizational management.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-sm text-gray-900">Techfest, IIT Bombay</h3>
+                        <span class="text-sm font-medium">Jun 2023 - Dec 2023</span>
+                    </div>
+                    <p class="text-sm font-semibold italic mb-1">College Ambassador (Silver Medal Recognition)</p>
+                    <ul class="list-disc list-outside ml-5 text-sm text-gray-900 space-y-1">
+                        <li>Orchestrated digital campaigns and student outreach to promote IIT Bombay's flagship event.
+                        </li>
+                        <li>Coordinated event registrations across multiple institutions, earning a Silver Medal for
+                            outstanding networking and marketing performance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h2 class="text-md font-bold uppercase border-b border-black mb-3 tracking-wide">Education</h2>
+                <div class="mb-2">
+                    <div class="flex justify-between items-baseline">
+                        <span class="font-bold text-sm">Master of Business Administration (MBA)</span>
+                        <span class="text-sm">2022 - 2024</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>Gangadhar Meher University</span>
+                        <span>CGPA: 7.2</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <span class="font-bold text-sm">Bachelor of Commerce (B.Com)</span>
+                        <span class="text-sm">2019 - 2022</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>Sambalpur University</span>
+                        <span>CGPA: 7.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Certifications Split -->
+            <div class="grid grid-cols-2 gap-8 mb-6">
+                <div>
+                    <h2 class="text-md font-bold uppercase border-b border-black mb-3 tracking-wide">Skills</h2>
+                    <ul class="text-sm text-gray-900 space-y-1">
+                        <li><strong>Functional:</strong> Sales Strategy, Financial Analysis, Market Research, Operations
+                            Management.</li>
+                        <li><strong>Technical:</strong> Tally, MS Office (Word, PowerPoint), Data Storytelling.</li>
+                        <li><strong>Emerging Tech:</strong> Artificial Intelligence (AI) Tools, IoT Basics.</li>
+                        <li><strong>Soft Skills:</strong> Negotiation, Collaboration, Thought Leadership.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-md font-bold uppercase border-b border-black mb-3 tracking-wide">Certifications</h2>
+                    <ul class="text-sm text-gray-900 list-disc list-inside space-y-1">
+                        <li>Google Project Management (Google)</li>
+                        <li>On-premises Sales Analysis (Forage)</li>
+                        <li>Digital Marketing (Placify)</li>
+                        <li>IoT Application (Infosys Springboard)</li>
+                        <li>Manager - Waste Management (NSDC)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="mb-0">
+                <h2 class="text-md font-bold uppercase border-b border-black mb-3 tracking-wide">Projects</h2>
+                <div class="text-sm text-gray-900">
+                    <p class="font-bold">Mini Security Tool Portfolio <span class="font-normal italic">(GitHub)</span>
+                    </p>
+                    <p class="mt-1">Developed a personal technical project to demonstrate understanding of security
+                        tools, portfolio structuring, and version control (Git).</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- DATA ---
+        const timelineData = [
+            {
+                type: 'work',
+                role: 'Customer Service Executive',
+                company: 'Mahindra & Mahindra Finance',
+                date: 'Feb 2025 - Jun 2025',
+                desc: 'Liaison for EV Segment (BE.06 & XUV e9). Managed dealer-customer relations and feedback loops.',
+                tags: ['Sales', 'Auto Finance']
+            },
+            {
+                type: 'education',
+                role: 'Master of Business Administration',
+                company: 'Gangadhar Meher University',
+                date: '2022 - 2024',
+                desc: 'Specialized in Business Administration. Graduated with 7.2 CGPA.',
+                tags: ['MBA', 'Management']
+            },
+            {
+                type: 'work',
+                role: 'Finance Intern',
+                company: 'Mahanadi Coalfields Limited',
+                date: 'Jun 2023 - July 2023',
+                desc: 'Analyzed budget utilization and compliance reports in GM Office.',
+                tags: ['Finance', 'Analysis']
+            },
+            {
+                type: 'work',
+                role: 'College Ambassador',
+                company: 'Techfest, IIT Bombay',
+                date: 'Jun 2023 - Dec 2023',
+                desc: 'Silver Medalist. Coordinated registrations and digital marketing campaigns.',
+                tags: ['Marketing', 'Leadership']
+            },
+            {
+                type: 'work',
+                role: 'Sales Manager',
+                company: 'Blue Lagoon Residency',
+                date: 'May 2023 - Jun 2023',
+                desc: 'Boosted booking conversions by 15% through strategic lead follow-up.',
+                tags: ['Sales', 'Strategy']
+            },
+            {
+                type: 'education',
+                role: 'Bachelor of Commerce',
+                company: 'Sambalpur University',
+                date: '2019 - 2022',
+                desc: 'Undergraduate degree in Commerce. Graduated with 7.2 CGPA.',
+                tags: ['Commerce', 'Accounting']
+            }
+        ];
+
+        // --- VIEW SWITCHING ---
+        const atsView = document.getElementById('ats-view');
+        const interactiveView = document.getElementById('interactive-view');
+        const btnAts = document.getElementById('btn-ats');
+        const btnInteractive = document.getElementById('btn-interactive');
+
+        function switchMode(mode) {
+            if (mode === 'ats') {
+                interactiveView.classList.add('hidden');
+                interactiveView.classList.remove('block');
+                atsView.classList.remove('hidden');
+                atsView.classList.add('block');
+
+                // Button States
+                btnAts.classList.remove('text-slate-600', 'hover:bg-slate-100');
+                btnAts.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+                btnInteractive.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btnInteractive.classList.add('text-slate-600', 'hover:bg-slate-100');
+            } else {
+                atsView.classList.add('hidden');
+                atsView.classList.remove('block');
+                interactiveView.classList.remove('hidden');
+                interactiveView.classList.add('block');
+
+                // Button States
+                btnInteractive.classList.remove('text-slate-600', 'hover:bg-slate-100');
+                btnInteractive.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+                btnAts.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btnAts.classList.add('text-slate-600', 'hover:bg-slate-100');
+            }
+        }
+
+        // --- TIMELINE RENDERING ---
+        const timelineContainer = document.getElementById('timeline-container');
+
+        function renderTimeline(filter) {
+            timelineContainer.innerHTML = '';
+
+            const filteredData = filter === 'all'
+                ? timelineData
+                : timelineData.filter(item => item.type === filter);
+
+            filteredData.forEach(item => {
+                const isWork = item.type === 'work';
+                // Unicode icons for visual distinction
+                const icon = isWork ? '&#128188;' : '&#127891;';
+                const colorClass = isWork ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500';
+
+                const html = `
+                    <div class="relative mb-6 transition-all hover:translate-x-1 duration-300 group">
+                        <!-- Dot on line -->
+                        <div class="absolute -left-[45px] top-1 h-4 w-4 rounded-full border-2 border-white ${isWork ? 'bg-blue-500' : 'bg-amber-500'} shadow-sm z-10"></div>
+                        
+                        <!-- Card -->
+                        <div class="bg-white border border-slate-100 rounded-lg p-4 shadow-sm group-hover:shadow-md transition-shadow ${colorClass}">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                <div>
+                                    <h3 class="text-md font-bold text-slate-800">${item.role}</h3>
+                                    <div class="text-xs font-medium text-slate-500 flex items-center gap-2 mt-1">
+                                        <span>${icon}</span> ${item.company}
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded mt-2 sm:mt-0 whitespace-nowrap self-start">${item.date}</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-3">${item.desc}</p>
+                            <div class="flex flex-wrap gap-2">
+                                ${item.tags.map(tag => `<span class="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded text-slate-500 bg-slate-50 border border-slate-200">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                timelineContainer.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        function filterTimeline(filterType) {
+            renderTimeline(filterType);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.filter === filterType) {
+                    btn.classList.add('bg-white', 'shadow-sm', 'text-slate-800');
+                    btn.classList.remove('text-slate-500');
+                } else {
+                    btn.classList.remove('bg-white', 'shadow-sm', 'text-slate-800');
+                    btn.classList.add('text-slate-500');
+                }
+            });
+        }
+
+        // --- CHARTS ---
+        function initCharts() {
+            // 1. Skills Radar
+            const ctxRadar = document.getElementById('skillsRadar').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: ['Sales Strategy', 'Finance', 'Tech/AI', 'Leadership', 'Data Analysis'],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [90, 85, 75, 80, 70],
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgb(59, 130, 246)',
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(59, 130, 246)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: '#f1f5f9' },
+                            pointLabels: {
+                                font: { size: 10, family: 'Inter', weight: '600' },
+                                color: '#64748b'
+                            },
+                            ticks: { display: false, max: 100 }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // 2. Domain Distribution (Doughnut)
+            const ctxDoughnut = document.getElementById('domainChart').getContext('2d');
+            new Chart(ctxDoughnut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Marketing', 'Finance', 'Operations', 'Tech'],
+                    datasets: [{
+                        data: [40, 30, 15, 15],
+                        backgroundColor: ['#3b82f6', '#f59e0b', '#10b981', '#6366f1'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    cutout: '75%',
+                    plugins: {
+                        legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10, family: 'Inter' } } }
+                    }
+                }
+            });
+        }
+
+        // --- INIT ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTimeline('all');
+            initCharts();
+        });
+
+    </script>
+</body>
+
+</html>
